@@ -43,12 +43,18 @@ public class VehicleServiceImpl implements VehicleService{
 
     @Override
     public List<Vehicle> searchByName(String name) {
-        return List.of();
+        List<Vehicle> result = new ArrayList<>();
+        for (Vehicle i : vehicles) {
+            if (i.getName().toLowerCase().contains(name.toLowerCase())) {
+                result.add(i);
+            }
+        }
+        return result;
     }
 
     @Override
     public void sortByPrice(boolean ascending) {
-
+        return 0;
     }
 
     @Override
