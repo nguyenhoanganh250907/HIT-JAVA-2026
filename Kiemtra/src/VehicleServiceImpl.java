@@ -13,7 +13,7 @@ public class VehicleServiceImpl implements VehicleService{
     public boolean updateVehicle(String id, Vehicle newVehicle) {
         boolean check = false;
         for (int i = 0; i < vehicles.size(); i++) {
-            if (vehicles.get(i).getId() == id) {
+            if (vehicles.get(i).getId().equalsIgnoreCase(id)) {
                 check = true;
                 vehicles.set(i, newVehicle);
                 return true;
@@ -29,7 +29,7 @@ public class VehicleServiceImpl implements VehicleService{
     public boolean deleteVehicle(String id) {
         boolean check = false;
         for (int i = 0; i < vehicles.size(); i++) {
-            if (vehicles.get(i).getId() == id) {
+            if (vehicles.get(i).getId().equalsIgnoreCase(id)) {
                 check = true;
                 vehicles.remove(i);
                 return true;
